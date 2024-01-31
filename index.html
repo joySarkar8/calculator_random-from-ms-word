@@ -14,14 +14,19 @@
 <body>
     <div class="box-container">
         <div class="header">
-            <h1>Enamul Accumulator</h1>
+            <h1>Accumulator</h1>
             <h4>Ms word table Calculator</h4>
         </div>
         <div class="input-field">
-            <input id="input" placeholder="Please paste valid numbers from Ms Word........" type="text">
+            <input onfocus="joy(true)" id="input" placeholder="Please paste valid numbers from Ms Word........" type="text">
         </div>
-        <div class="btn">
-            <button id="btn">CLICK</button>
+        <div class="btn-container">
+            <div>
+                <button id="calculate" disabled class="btn">CALCULATE</button>
+            </div>
+            <!-- <div>
+                <button id="new-calculate" class="btn">NEW EQUATION</button>
+            </div> -->
         </div>
         <div id="result-section">
             <ul id="ul">

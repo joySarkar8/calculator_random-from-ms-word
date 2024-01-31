@@ -20,30 +20,32 @@ body {
     height: 50px;
     width: 100%;
     padding: 0 0 0 20px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     font-size: 20px;
     margin-bottom: 20px;
 }
-.btn {
-    display: flex;
-    justify-content: center;
+#input:focus{
+    background-color: #e8eaec;
+
 }
-#btn {
-    width: 200px;
+.btn {
+    width: 220px;
     height: 48px;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
-    border: 2px solid black;
     border-radius: 15px;
-    background-color: cadetblue;
+    background-color: #A2A9AF;
     color: aliceblue;
 }
-#btn:hover {
-    color: black;
-}
+
 .li {
     border: 1px solid black;
     margin-bottom: 5px;
     font-size: 25px;
     padding-left: 50px;
+}
+.btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
 }

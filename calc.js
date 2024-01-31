@@ -1,11 +1,26 @@
 const result = document.getElementById('result');
 const ul = document.getElementById('ul');
-document.getElementById('btn').addEventListener('click', function () {
-    const valueFromInput = document.getElementById('input');
+const calculate = document.getElementById('calculate');
+const newEquation = document.getElementById('new-calculate');
+const valueFromInput = document.getElementById('input');
+
+
+function joy(value) {
+    if (value === true) {
+        calculate.disabled = false;
+        calculate.style.backgroundColor = '#015196';
+    }
+}
+calculate.addEventListener('click', function () {
+
     const finalValue = valueFromInput.value;
     const banglaToEnglish = replaceNumbers(finalValue);
     const split = banglaToEnglish.split('');
-    
+
+    if (finalValue === '') {
+        return;
+    }
+
     const newArray = [];
     let string = '';
     let sum = 0;
@@ -31,13 +46,19 @@ document.getElementById('btn').addEventListener('click', function () {
     } else {
         const newSplit = banglaToEnglish.split(' ');
         console.log(newSplit);
-        for(const string of newSplit){
+        for (const string of newSplit) {
             const number = parseInt(string);
             if (!isNaN(number)) {
                 newArray.push(number);
             };
         };
     };
+
+    while (ul.hasChildNodes()) {
+        ul.removeChild(ul.firstChild);
+    };
+
+
     for (const i of newArray) {
         const li = document.createElement('li');
         li.classList.add('li')
@@ -46,8 +67,10 @@ document.getElementById('btn').addEventListener('click', function () {
         console.log(i);
         sum += i;
     };
+    
     console.log(sum);
     result.innerText = sum;
+    valueFromInput.value = '';
+    calculate.disabled = true;
+    calculate.style.backgroundColor = '#A2A9AF';
 });
-
-
